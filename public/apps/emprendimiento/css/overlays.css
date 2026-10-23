@@ -1,0 +1,21 @@
+/* Mi Emprendimiento Dulce · Ventanas modales, confirmaciones y avisos */
+/* Modal */
+#modalWrap,#confirmWrap{position:fixed;inset:0;z-index:60;background:rgba(30,18,12,.45);display:none;align-items:flex-end;justify-content:center;padding:0}
+#confirmWrap{z-index:70}
+#modalWrap.open,#confirmWrap.open{display:flex}
+#modal,#confirmBox{background:var(--card);width:100%;max-width:640px;max-height:92vh;border-radius:22px 22px 0 0;display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(0,0,0,.2);animation:sheet .28s ease}
+#modal.wide{max-width:920px}
+@keyframes sheet{from{transform:translateY(30px)}to{transform:none}}
+.m-head{display:flex;justify-content:space-between;align-items:center;padding:14px 14px 10px 22px;border-bottom:1px solid var(--line)}
+.m-head h3{font-size:1.2rem}
+#modalBody,#confirmBody{padding:18px 22px;overflow-y:auto;-webkit-overflow-scrolling:touch;flex:1}
+#modalFoot,#confirmFoot{display:flex;gap:10px;justify-content:flex-end;padding:12px 22px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--line);flex-wrap:wrap}
+#modalFoot:empty{display:none}
+#confirmBox{max-width:460px}
+@media(min-width:700px){#modalWrap,#confirmWrap{align-items:center;padding:24px}#modal,#confirmBox{border-radius:22px}}
+
+/* Toasts */
+#toasts{position:fixed;left:50%;transform:translateX(-50%);bottom:90px;z-index:90;display:flex;flex-direction:column;gap:8px;width:min(92vw,420px);pointer-events:none}
+.toast{background:var(--choco);color:var(--bg);padding:12px 18px;border-radius:14px;box-shadow:var(--shadow);font-size:.92rem;animation:tin .3s ease;font-weight:500}
+.toast.ok{background:var(--ok);color:#fff}.toast.bad{background:var(--bad);color:#fff}.toast.warn{background:var(--warn);color:#fff}
+@keyframes tin{from{transform:translateY(10px);opacity:.3}to{transform:none;opacity:1}}

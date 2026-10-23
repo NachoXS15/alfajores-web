@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mi Emprendimiento Dulce</title>
+<meta name="description" content="Herramienta de gestión para emprendimientos de alfajores artesanales: costos, recetas, precios, pedidos, ventas, inventario y metas.">
+<meta name="theme-color" content="#e25508">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/overlays.css">
+<link rel="stylesheet" href="css/wizard-guide.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="welcome">
+  <div class="w-deco a" aria-hidden="true"></div>
+  <div class="w-deco b" aria-hidden="true"></div>
+  <div class="w-box">
+    <span class="w-brand w-anim">EMPRENDE DULCE</span>
+    <h1 class="w-anim d2">Mi Emprendimiento <em>Dulce</em></h1>
+    <p class="w-quote w-anim d3">Organizá tu producción, calculá tus costos reales y conocé cuánto ganás con cada alfajor.</p>
+    <button class="btn w-btn" id="startBtn" onclick="enterApp()">Empezar</button>
+    <p class="w-small">Herramienta de gestión · Bonus del curso <strong>Alfajores Irresistibles</strong></p>
+  </div>
+</div>
+
+<div id="wizard" class="hidden"></div>
+
+<div id="app" class="hidden">
+  <aside id="sidebar" aria-label="Menú principal">
+    <div class="brand"><small>EMPRENDE DULCE</small><strong>Mi Emprendimiento Dulce</strong></div>
+    <nav id="nav"></nav>
+    <div class="side-foot">Los resultados son estimaciones para ayudarte a decidir. No garantizan ingresos.</div>
+  </aside>
+  <div id="drawerOverlay" onclick="closeDrawer()"></div>
+  <div class="main-col">
+    <header class="topbar">
+      <button class="icon-btn only-m" onclick="openDrawer()" aria-label="Abrir menú" id="menuBtn"></button>
+      <div class="t-title" id="tTitle"></div>
+      <button class="prog" onclick="go('guia')" aria-label="Ver progreso de configuración"><span class="pt">Progreso</span><span class="prog-bar"><i id="progBar" style="width:0"></i></span><b id="progTxt">0%</b></button>
+      <span class="sync" id="sync"></span>
+      <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Cambiar modo día / noche"></button>
+    </header>
+    <main id="main"></main>
+  </div>
+  <nav id="bottomnav" aria-label="Navegación rápida"></nav>
+</div>
+
+<div id="modalWrap" onclick="if(event.target===this)closeModal()">
+  <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="m-head"><h3 id="modalTitle"></h3><button class="icon-btn" onclick="closeModal()" aria-label="Cerrar" id="modalX"></button></div>
+    <div id="modalBody"></div>
+    <div id="modalFoot"></div>
+  </div>
+</div>
+<div id="confirmWrap">
+  <div id="confirmBox" role="alertdialog" aria-modal="true">
+    <div class="m-head"><h3 id="confirmTitle">Confirmar</h3></div>
+    <div id="confirmBody"></div>
+    <div id="confirmFoot"></div>
+  </div>
+</div>
+<div id="toasts" aria-live="polite"></div>
+
+<script src="js/core/utils.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/icons.js"></script>
+<script src="js/core/format.js"></script>
+<script src="js/core/calc.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/app/nav.js"></script>
+<script src="js/app/wizard.js"></script>
+<script src="js/modules/panel.js"></script>
+<script src="js/modules/ingredientes.js"></script>
+<script src="js/modules/recetas.js"></script>
+<script src="js/modules/productos.js"></script>
+<script src="js/modules/ganancias.js"></script>
+<script src="js/modules/pedidos.js"></script>
+<script src="js/modules/ventas.js"></script>
+<script src="js/modules/packaging.js"></script>
+<script src="js/modules/inventario.js"></script>
+<script src="js/modules/produccion.js"></script>
+<script src="js/modules/metas.js"></script>
+<script src="js/modules/informes.js"></script>
+<script src="js/modules/guia.js"></script>
+<script src="js/modules/cuenta.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

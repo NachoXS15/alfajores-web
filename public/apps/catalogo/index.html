@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mi Catálogo Dulce</title>
+<meta name="theme-color" content="#f0e6d1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="catalogo.css">
+</head><body>
+
+<!-- BIENVENIDA -->
+<div class="welcome" id="welcome">
+  <div class="wl-in">
+    <div class="wl-deco" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="wl-brand">EMPRENDE DULCE</div>
+    <h1 class="wl-t">Mi Catálogo Dulce</h1>
+    <p class="wl-q">Creá tu catálogo de alfajores, organizá tus variedades y presentá tus productos de manera profesional, todo desde un solo lugar.</p>
+    <button class="btn wl-btn" id="enterBtn" onclick="enterApp()">Empezar</button>
+    <p class="wl-sub">Bonus del curso Alfajores Irresistibles</p>
+  </div>
+</div>
+
+<aside class="side" id="side"></aside>
+
+<div class="mw">
+  <header class="topbar">
+    <div class="tb-row">
+      <h1 id="vtitle">Panel principal</h1>
+      <span class="savest" id="savest" aria-live="polite"></span>
+      <button class="ib" onclick="toggleTheme()" id="themeBtn" aria-label="Cambiar modo noche o día"></button>
+    </div>
+    <button class="prog" onclick="openProgress()" aria-label="Ver progreso del catálogo">
+      <span class="prog-t" id="progT">Tu catálogo: 0% listo</span>
+      <span class="prog-bar"><span id="progB" style="width:0%"></span></span>
+    </button>
+  </header>
+  <main id="main"></main>
+</div>
+
+<nav class="bnav" id="bnav"></nav>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="sheet" id="sheet"></div>
+</div>
+<div id="toast" role="status"></div>
+<input type="file" id="filePick" accept="image/jpeg,image/png,image/webp" style="display:none">
+<input type="file" id="jsonPick" accept="application/json,.json" style="display:none">
+
+<script src="catalogo.js"></script>
+</body></html>

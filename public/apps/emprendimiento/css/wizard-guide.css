@@ -1,0 +1,23 @@
+/* Mi Emprendimiento Dulce · Asistente inicial y guía */
+/* Wizard */
+#wizard{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px 16px 60px}
+.wz{width:100%;max-width:640px}
+.wz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px}
+.wz-dots{display:flex;gap:6px;margin:6px 0 20px}
+.wz-dots i{flex:1;height:6px;border-radius:10px;background:var(--beige)}
+.wz-dots i.on{background:var(--accent)}
+.wz .card{padding:26px}
+.wz h2{font-size:1.5rem;margin-bottom:6px}
+.wz-foot{display:flex;justify-content:space-between;gap:10px;margin-top:22px;flex-wrap:wrap}
+
+/* Guide */
+details.concept{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:10px;box-shadow:var(--shadow-s);overflow:hidden}
+details.concept summary{list-style:none;padding:16px 18px;min-height:56px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:600;color:var(--choco)}
+details.concept summary::-webkit-details-marker{display:none}
+details.concept summary::after{content:'+';font-size:1.4rem;color:var(--accent);transition:transform .2s}
+details.concept[open] summary::after{transform:rotate(45deg)}
+details.concept .cbody{padding:0 18px 18px;font-size:.94rem}
+details.concept .cbody p+p{margin-top:8px}
+blockquote{border-left:4px solid var(--accent);padding:12px 18px;background:var(--card);border-radius:0 14px 14px 0;font-family:var(--ff-h);font-size:1.12rem;color:var(--choco);font-style:italic;margin:10px 0;box-shadow:var(--shadow-s)}
+.quiz-opt{display:block;width:100%;text-align:left;min-height:48px;padding:10px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);color:var(--text);margin-top:8px;font-weight:500}
+.quiz-opt.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
